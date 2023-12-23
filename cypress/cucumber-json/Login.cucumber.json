@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Sauce Lab Login",
+    "line": 1,
+    "id": "sauce-lab-login",
+    "tags": [],
+    "uri": "Login.feature",
+    "elements": [
+      {
+        "id": "sauce-lab-login;verify-login-functionality-with-multiple-data-set",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Verify Login functionality with multiple data set",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User enter login page of sauce lab",
+            "result": {
+              "status": "passed",
+              "duration": 1306000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "user enter multiple data set and validate response",
+            "result": {
+              "status": "passed",
+              "duration": 11582000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
