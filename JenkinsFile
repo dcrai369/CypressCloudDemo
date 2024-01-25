@@ -7,10 +7,10 @@ pipeline
               choice( name:'BROWSER', choices: ['chrome','firefox','electron'] , description:"choice for the browser")
              
     }
-    //  options{
-    //             ansiColor('xterm')
+     options{
+                ansiColor('xterm')
                 
-    //           }
+              }
     stages{
         stage('Build')
         {
