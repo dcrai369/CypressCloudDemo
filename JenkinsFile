@@ -14,7 +14,7 @@ pipeline
     stages{
         stage('Build')
         {
-            steps
+            step
             {
                            
              echo:"building the application"
@@ -23,7 +23,7 @@ pipeline
         }
         stage('Testing')
         {
-            steps
+            step
             {
               
             bat "npm i"
@@ -33,7 +33,7 @@ pipeline
         }
         stage('Deploying')
         {
-            steps{
+            step{
                             
                    
                 echo:"building the application"
@@ -43,7 +43,7 @@ pipeline
 
         }
     }
-    
+
     post{
         always{
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
