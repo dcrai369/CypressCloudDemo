@@ -3,7 +3,7 @@ pipeline{
     
     parameters {
               string( name:'SPEC',defaultValue:"cypress/e2e/**/**" , description: "Enter the script path you want to execute")
-              choice( name:'BROWSER', choice: ['chrome','firefox'] , description:"choice for the browser")
+              choice( name:'BROWSER', choices: ['chrome','firefox'] , description:"choice for the browser")
              
     }
      options{
@@ -12,8 +12,11 @@ pipeline{
               }
     stages{
         stage('Build'){
-            echo "Building applivcation"
-        }
+                         steps{
+                            
+                          echo:"building the application"
+            }     
+               }
         stage('Testing'){
             steps{
                 bat "npm i"
@@ -21,7 +24,12 @@ pipeline{
             }
         }
         stage('Deploying'){
-            echo:"Deploy the application"
+            steps{
+                            
+               echo:"Deploy the application"
+
+
+            }
 
         }
     }
