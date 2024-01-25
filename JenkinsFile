@@ -14,30 +14,36 @@ pipeline
     stages{
         stage('Build')
         {
-                         steps{
+            steps
+            {
                            
-                                echo:"building the application"
+             echo:"building the application"
                                 
-               }
-        }
-        stage('Testing'){
-            steps{
-                script{
-                bat "npm i"
-                bat "npx cypress run --browser {BROWSER} --spec {SPEC}"
             }
-        }}
-        stage('Deploying'){
+        }
+        stage('Testing')
+        {
+            steps
+            {
+              
+            bat "npm i"
+            bat "npx cypress run --browser {BROWSER} --spec {SPEC}"
+            
+            }
+        }
+        stage('Deploying')
+        {
             steps{
                             
                    
-                                echo:"building the application"
+                echo:"building the application"
                             
 
             }
 
         }
     }
+    
     post{
         always{
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
