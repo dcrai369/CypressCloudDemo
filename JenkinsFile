@@ -13,12 +13,13 @@ pipeline{
     stages{
         stage('Build'){
                          steps{
-                            
-                          echo:"building the application"
-            }     
+                            script{
+                                echo:"building the application"
+                              }     
                }
         stage('Testing'){
             steps{
+                script{
                 bat "npm i"
                 bat "npx cypress run --browser {BROWSER} --spec {SPEC}"
             }
@@ -26,8 +27,9 @@ pipeline{
         stage('Deploying'){
             steps{
                             
-               echo:"Deploy the application"
-
+                      script{
+                                echo:"building the application"
+                            } 
 
             }
 
