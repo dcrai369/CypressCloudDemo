@@ -15,9 +15,9 @@ pipeline
         stage('Build')
         {
                          steps{
-                            script{
+                           
                                 echo:"building the application"
-                              }     
+                                
                }
         }
         stage('Testing'){
@@ -30,9 +30,9 @@ pipeline
         stage('Deploying'){
             steps{
                             
-                      script{
+                   
                                 echo:"building the application"
-                            } 
+                            
 
             }
 
