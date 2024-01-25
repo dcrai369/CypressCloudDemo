@@ -1,4 +1,5 @@
-pipeline{
+pipeline
+{
     agent any
     
     parameters {
@@ -11,19 +12,21 @@ pipeline{
                 
               }
     stages{
-        stage('Build'){
+        stage('Build')
+        {
                          steps{
                             script{
                                 echo:"building the application"
                               }     
                }
+        }
         stage('Testing'){
             steps{
                 script{
                 bat "npm i"
                 bat "npx cypress run --browser {BROWSER} --spec {SPEC}"
             }
-        }
+        }}
         stage('Deploying'){
             steps{
                             
