@@ -4,7 +4,7 @@ pipeline {
     parameters {
         choice(
             name: 'BROWSER',
-            choices: ['chrome', 'firefox'],
+            choices: ['chrome', 'firefox','electron'],
             description: 'Select the browser for Cypress tests'
         )
     }
@@ -21,8 +21,7 @@ pipeline {
                 script {
                     node {
                         stage('Install Node.js') {
-                            sh 'npm install'
-                        }
+                                bat "npm i"                        }
                     }
                 }
             }
@@ -34,7 +33,7 @@ pipeline {
                     node {
                         stage('Run Cypress') {
                             // Run Cypress tests with the selected browser
-                            sh "npx cypress run --browser ${params.BROWSER}"
+                            bat "npx cypress run --browser ${params.BROWSER}"
                             
                             // You can customize the Cypress command based on your needs
                         }
