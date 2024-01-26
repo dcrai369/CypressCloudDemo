@@ -14,7 +14,7 @@
   "author": "deepak",
   "license": "ISC",
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.0",
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
     "allure-commandline": "^2.25.0",
     "cypress": "^13.6.1",
     "cypress-cucumber-preprocessor": "^4.3.1"
