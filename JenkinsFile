@@ -7,9 +7,13 @@ pipeline
               choice( name:'browser', choices: ['chrome','firefox','electron'] , description:"choice for the browser")
              
     }
-     ansiColor('xterm') {
-    // some block
-}
+     options{
+               
+                  buildDiscarder(logRotator(numToKeepStr:'10'))
+  timeout(time: 5, unit: 'MINUTES')
+  ansiColor('xterm')
+                
+              }
     stages{
         stage('Build')
         {
@@ -40,12 +44,23 @@ pipeline
             }
 
         }
+
+        stage('Send Email') {
+            steps {
+                script {
+                    emailext body: '''<html><body>HTML report attached.</body></html>''',
+                             mimeType: 'text/html',
+                             subject: 'Cypress Test Report',
+                             to: 'dcrai369@gmail.com',
+                             attachLog: true,
+                             attachmentsPattern: 'cypress/cucumber-report/**'
+                }
+            }
         
     }
 
     post{
         always{
-              // bat "node .\\cucumber-json.js"                            
 
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/cucumber-report', reportFiles: 'index.html', reportName: 'Cucumber Report', reportTitles: '', useWrapperFileDirectly: true])
         }
