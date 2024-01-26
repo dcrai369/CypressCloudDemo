@@ -56,7 +56,7 @@ pipeline
                              attachmentsPattern: 'cypress/cucumber-report/**'
                 }
             }
-        
+        }
     }
 
     post{
@@ -65,4 +65,4 @@ pipeline
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/cucumber-report', reportFiles: 'index.html', reportName: 'Cucumber Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
-}}
+}
