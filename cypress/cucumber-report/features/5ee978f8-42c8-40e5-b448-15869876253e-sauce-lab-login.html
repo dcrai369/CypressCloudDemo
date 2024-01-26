@@ -934,7 +934,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     
                 </div>
 
-                <h2>Scenario: <small>Login into Sauce lab</small></h2>
+                <h2>Scenario: <small>Verify Login functionality with multiple data set</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -955,7 +955,7 @@ input#darkCheck:checked ~ label>svg#moon {
 
                     
                         <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
+                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
                         </li>
                     
 
@@ -1035,186 +1035,6 @@ input#darkCheck:checked ~ label>svg#moon {
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        User enter username "abc@gtest.com"
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        User enter password "123456"
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        User click on login button
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
                                             <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
                                         </div>
@@ -1222,10 +1042,10 @@ input#darkCheck:checked ~ label>svg#moon {
                                 
 
                                 <div class="text">
-                                    <span class="keyword highlight">Then </span>
+                                    <span class="keyword highlight">When </span>
 
                                     
-                                        user should be logged into the application
+                                        user enter multiple data set and validate response
                                         
                                     
 
@@ -1237,7 +1057,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                     
 
                                     
-                                        <a href="#error0-4-error" data-toggle="collapse">+ Show Error</a>
+                                        <a href="#error0-1-error" data-toggle="collapse">+ Show Error</a>
                                     
 
                                     
@@ -1254,18 +1074,18 @@ input#darkCheck:checked ~ label>svg#moon {
 
                         
                             
-                                <div id="error0-4-error" class="scenario-step-collapse collapse">
-                                    <pre class=info>CypressError: `cy.readFile("C:\Users\deerai1\Desktop\Cypress_Demo_Cloud\cypress\screenshots/Login.feature/Sauce Lab Login -- Login into Sauce lab (failed).png")` timed out.
+                                <div id="error0-1-error" class="scenario-step-collapse collapse">
+                                    <pre class=info>AxiosError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
 
-https://on.cypress.io/readfile
+  ) Request aborted
 
-Because this error occurred during a `after each` hook we are skipping all of the remaining tests.
-    at cypressErr (https://www.github.com/__cypress/runner/cypress_runner.js:75240:18)
-    at Object.cypressErrByPath (https://www.github.com/__cypress/runner/cypress_runner.js:75245:10)
-    at $Command.readFile (https://www.github.com/__cypress/runner/cypress_runner.js:119381:88)
-    at cyFn (https://www.github.com/__cypress/runner/cypress_runner.js:138828:19)
-From Your Spec Code:
-    at Context.eval (node_modules/cypress-cucumber-attach-screenshots-to-failed-steps/index.js:12:0)</pre>
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+at Q (https://opensource-demo.orangehrmlive.com/web/dist/js/chunk-vendors.js?v=1689053487449:134:38797)
+at 8945/ut(/(/l.onabort (https://opensource-demo.orangehrmlive.com/web/dist/js/chunk-vendors.js?v=1689053487449:134:53488)</pre>
                                 </div>
                             
 

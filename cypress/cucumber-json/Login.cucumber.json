@@ -22,7 +22,7 @@
             "name": "User enter login page of sauce lab",
             "result": {
               "status": "passed",
-              "duration": 11051000000
+              "duration": 15391000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "user enter multiple data set and validate response",
             "result": {
               "status": "passed",
-              "duration": 18073000000
+              "duration": 16942000000
             }
           }
         ]
