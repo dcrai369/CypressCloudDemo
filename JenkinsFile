@@ -42,11 +42,26 @@ pipeline
             }
 
         }
+        stage('Generate HTML Report') {
+            steps {
+                script {
+                    node {
+                        stage('Merge and Generate Report') {
+                            // Merge Mochawesome JSON files
+                            bat 'npx mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mochareports/report.json'
+                            
+                            // Generate HTML report
+                            bat 'npx marge cypress/reports/mochareports/report.json --reportDir cypress/reports/mochareports/html'
+                        }
+                    }
+                }
+            }
+        }
     }
 
     post{
         always{
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            archiveArtifacts 'cypress/reports/mochareports/html/**'
         }
     }
 }
