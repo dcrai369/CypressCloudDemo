@@ -39,7 +39,7 @@ pipeline
             steps{
                             
                    
-        bat "node .\cucumber-json.js"                            
+        bat "node .\\cucumber-json.js"                            
 
             }
 
