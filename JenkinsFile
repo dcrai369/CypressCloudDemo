@@ -53,7 +53,7 @@ pipeline
                              subject: 'Cypress Test Report',
                              to: 'dcrai369@gmail.com',
                              attachLog: true,
-                             attachmentsPattern: 'cypress/cucumber-report/**'
+                             attachmentsPattern: 'cypress/cucumber-report/index.html'
                 }
             }
         }
