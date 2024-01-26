@@ -8,6 +8,121 @@
     "uri": "Login.feature",
     "elements": [
       {
+        "id": "sauce-lab-login;login-into-sauce-lab",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Login into Sauce lab",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User enter login page of sauce lab",
+            "result": {
+              "status": "passed",
+              "duration": 10245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User enter username \"\"",
+            "result": {
+              "status": "failed",
+              "duration": 1450000000,
+              "error_message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:114389:68)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:138719:19)\nFrom Your Spec Code:\n    at Context.eval (cypress/e2e/Login/Login.js:21:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User enter password \"\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User click on login button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "user should be logged into the application",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sauce-lab-login;verify-corrcet-page-title-after-login",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Verify Corrcet Page title after Login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User enter login page of sauce lab",
+            "result": {
+              "status": "passed",
+              "duration": 3023000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User enter username \"\"",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:114389:68)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:138719:19)\nFrom Your Spec Code:\n    at Context.eval (cypress/e2e/Login/Login.js:21:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User enter password \"\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User click on login button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "user should be logged into the application and check the tile",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
         "id": "sauce-lab-login;verify-login-functionality-with-multiple-data-set",
         "keyword": "Scenario",
         "line": 16,
@@ -22,7 +137,35 @@
             "name": "User enter login page of sauce lab",
             "result": {
               "status": "passed",
-              "duration": 15391000000
+              "duration": 2140000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User enter username \"\"",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:114389:68)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:138719:19)\nFrom Your Spec Code:\n    at Context.eval (cypress/e2e/Login/Login.js:21:31)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User enter password \"\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User click on login button",
+            "result": {
+              "status": "skipped"
             }
           },
           {
@@ -31,8 +174,7 @@
             "line": 17,
             "name": "user enter multiple data set and validate response",
             "result": {
-              "status": "passed",
-              "duration": 16942000000
+              "status": "skipped"
             }
           }
         ]
