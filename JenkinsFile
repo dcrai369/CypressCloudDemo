@@ -7,10 +7,13 @@ pipeline
               choice( name:'browser', choices: ['chrome','firefox','electron'] , description:"choice for the browser")
              
     }
-    //  options{
-    //             ansiColor('xterm')
+     options{
+               
+                  buildDiscarder(logRotator(numToKeepStr:'10'))
+  timeout(time: 5, unit: 'MINUTES')
+  ansiColor('xterm')
                 
-    //           }
+              }
     stages{
         stage('Build')
         {
