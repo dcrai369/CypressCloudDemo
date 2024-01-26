@@ -1,50 +1,51 @@
-pipeline {
+pipeline
+{
     agent any
-
+    
     parameters {
-        choice(
-            name: 'BROWSER',
-            choices: ['chrome', 'firefox','electron'],
-            description: 'Select the browser for Cypress tests'
-        )
+              string( name:'spec',defaultValue:"cypress/e2e/**/**" , description: "Enter the script path you want to execute")
+              choice( name:'browser', choices: ['chrome','firefox','electron'] , description:"choice for the browser")
+             
     }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
+    //  options{
+    //             ansiColor('xterm')
+                
+    //           }
+    stages{
+        stage('Build')
+        {
+            steps
+            {
+                           
+             echo "building the application"
+                                
             }
         }
-
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    node {
-                        stage('Install Node.js') {
-                                bat "npm i"                        }
-                    }
-                }
+        stage('Testing')
+        {
+            steps
+            {
+              
+            bat "npm i"
+            bat "npx cypress run --browser ${params.BROWSER} --spec {SPEC}"
+            
             }
         }
-
-        stage('Run Cypress Tests') {
-            steps {
-                script {
-                    node {
-                        stage('Run Cypress') {
-                            // Run Cypress tests with the selected browser
-                            bat "npx cypress run --browser ${params.BROWSER}"
+        stage('Deploying')
+        {
+            steps{
                             
-                            // You can customize the Cypress command based on your needs
-                        }
-                    }
-                }
+                   
+                echo "building the application"
+                            
+
             }
+
         }
     }
 
-    post {
-        always {
+    post{
+        always{
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
