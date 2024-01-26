@@ -7,13 +7,9 @@ pipeline
               choice( name:'browser', choices: ['chrome','firefox','electron'] , description:"choice for the browser")
              
     }
-     options{
-               
-                  buildDiscarder(logRotator(numToKeepStr:'10'))
-  timeout(time: 5, unit: 'MINUTES')
-  ansiColor('xterm')
-                
-              }
+     ansiColor('xterm') {
+    // some block
+}
     stages{
         stage('Build')
         {
@@ -49,6 +45,8 @@ pipeline
 
     post{
         always{
+              // bat "node .\\cucumber-json.js"                            
+
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/cucumber-report', reportFiles: 'index.html', reportName: 'Cucumber Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
